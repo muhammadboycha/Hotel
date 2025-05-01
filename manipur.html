@@ -2,40 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Hotel Booking</title>
+    <title>Manipur Tourism</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <style>
-      @keyframes zoomInOut {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-      .zooming-bg {
-        animation: zoomInOut 15s ease-in-out infinite;
-      }
-      @keyframes slideUp {
-        0% {
-          transform: translateY(100%);
-          opacity: 0;
-        }
-        100% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-      .animate-slideUp {
-        animation: slideUp 1.5s ease-out forwards;
-      }
+      @keyframes slideZoom {
+  0%, 20% {
+    background-image: url('/Users/muhammadboycha/Hotel/images/sangai.jpeg');
+    transform: scale(1.05);
+    opacity: 190%;
+  }
+  10% {
+    transform: scale(1.1);
+  }
+
+  33.33%, 53.33% {
+    background-image: url('/Users/muhammadboycha/Hotel/images/loktak.jpg');
+    transform: scale(1.05);
+    opacity: 190%;
+  }
+  43.33% {
+    transform: scale(1.1);
+  }
+
+  66.66%, 100% {
+    background-image: url('https://i.ytimg.com/vi/swpi4WaX14E/maxresdefault.jpg');
+    transform: scale(1.05);
+    opacity: 190%;
+  }
+  86.66% {
+    transform: scale(1.1);
+  }
+}
+
+  
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-slideshow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: slideZoom 15s ease-in-out infinite;
+  z-index: -1;
+}
+
       @keyframes slideFromLeft {
         0% {
           transform: translateX(-20%);
@@ -50,92 +74,83 @@
       .animate-slideFromLeft {
         animation: slideFromLeft 1.5s ease-out forwards;
       }
-      @keyframes bloomingFlower {
-        0% {
-          transform: scale(0);
-          opacity: 0;
-        }
-        50% {
-          transform: scale(1.1);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-
-      .animate-bloomingFlower {
-        animation: bloomingFlower 2s ease-out forwards;
-      }
     </style>
   </head>
   <body class="m-0">
     <div class="h-[80vh] relative">
-      <div class="flex justify-between w-full bg-gray-800  text-white text-black shadow-md justify-center fixed top-0 z-10">
-        <div class="text--white w-1/3 flex items-center pl-10 ">
-            <img class="w-[65px] h-[65px] rounded-[50%] " src="https://manipurtourism.gov.in/wp-content/logos/logo%202.jpg"/>
+      <div
+        class="flex justify-between w-full bg-gray-800 text-white text-black shadow-md justify-center fixed top-0 z-10"
+      >
+        <div class="text--white w-1/3 flex items-center pl-10">
+          <div>
+            <img
+              class="w-[65px] h-[65px] rounded-[50%]"
+              src="https://manipurtourism.gov.in/wp-content/logos/logo%202.jpg"
+            />
+          </div>
+          <div class="ml-2">
+            <h2 class="font-bold text-xl">
+              <span class="text-yellow-600">MANIPUR </span>TOURISM
+            </h2>
+          </div>
         </div>
         <div class="w-1/3">
-            <nav
-            class="flex p-5 px-8 justify-center gap-8 "
-          >
+          <nav class="flex p-5 px-8 justify-center gap-8">
             <a
               href="#"
-              class="relative overflow-hidden border-[1px] border-white text-black rounded-lg no-underline px-2 py-1 bg-yellow-300"
+              class="relative overflow-hidden  text-white rounded-lg no-underline px-2 py-1 "
             >
               HOME
             </a>
             <a
-              href="#"
-              class="relative overflow-hidden border-[1px] border-white  rounded-lg no-underline px-2 py-1 before:absolute before:bottom-0 before:left-0 before:w-full before:h-0 before:bg-yellow-300 before:-z-10 before:transition-all before:duration-300 hover:before:h-full hover:text-black"
+              href="/Users/muhammadboycha/Hotel/homestayregistration.html"
+              class="relative overflow-hidden text-white rounded-lg no-underline px-2 py-1 "
+              target="_blank"
             >
-              REGISTER
+              HOMESTAY REGISTRATION
             </a>
             <a
-              href="#"
-              class="relative overflow-hidden border-[1px] border-white rounded-lg no-underline  px-2 py-1 before:absolute before:bottom-0 before:left-0 before:w-full before:h-0 before:bg-yellow-300 before:-z-10 before:transition-all before:duration-300 hover:before:h-full hover:text-black"
+              href="/Users/muhammadboycha/Hotel/homesatypolicy.html"
+              class="relative overflow-hidden text-white rounded-lg no-underline px-2 py-1 "
+              target="_blank"
             >
-              POLICY
+              HOMESTAY POLICY
             </a>
-        </nav>
+          </nav>
         </div>
         <div class="w-1/3 flex justify-end items-center pr-10">
-            <button class="bg-yellow-300 text-black font-bold px-3 py-2 rounded-lg text-[16px] hover:bg-white text-black">Book Now</button>
+          <button
+            class="bg-yellow-600 text-white font-bold px-3 py-2 rounded-lg hover:bg-white hover:text-black text-[16px]"
+          >
+            Book Now
+          </button>
         </div>
       </div>
-      <div
-        class="relative zooming-bg  bg-[url('https://northeastrental.in/wp-content/uploads/2024/07/Loktak-Lake-Manipur.jpg')] bg-center bg-cover h-[100vh] flex items-center justify-center text-center"
-      >
-        <div class="relative">
-          <h2
-            class="font-serif] font-bold italic text-[80px] text-6xl text-yellow-500 animate-slideFromLeft"
-          >
-            Luxury
-          </h2>
+      <div  class="relative hero-slideshow  ">
+        <div class="relative flex flex-col bg-center bg-cover h-[100vh] flex items-center justify-center text-center" >
+          
           <h1
-            class="text-[70px] text-white font-bold mt-2 animate-bloomingFlower"
+            class="text-[60px] text-white font-bold mt-2 animate-slideFromLeft "
           >
-            HOTELS & RESORTS
+          <span class="text-yellow-600">Discover Real Manipur</span>,<br> Stay with Our Families.
           </h1>
-          <p
-            class="px-2 text-[20px] text-black bg-sky-300 inline-block font-serif animate-slideUp"
-          >
-            Memories that will last forever
-          </p>
+          
         </div>
       </div>
     </div>
-    <div class="h-screen bg-white flex  justify-center relative">
+    <div class="h-screen bg-white flex justify-center relative">
       <div
-        class="flex justify-between rounded-lg bg-white w-[100%] px-5 py-10 w-[80%] absolute top-[-60px]  shadow-lg">
+        class="flex justify-between rounded-lg bg-gray-100 w-[100%] px-5 py-10 w-[80%] absolute top-[-60px] shadow-lg"
+      >
         <!-- Category -->
         <div
-          class="flex flex-col items-start gap-[5px]  cursor-pointer"
+          class="flex flex-col items-start gap-[5px] cursor-pointer"
           onclick="this.querySelector('select').showPicker()"
         >
           <span><span class="mr-1">⚙️</span>Category</span>
-          <select class="border-b border-b-black px-2 cursor-pointer">
+          <select
+            class="border-b bg-gray-100 border-b-black px-2 cursor-pointer"
+          >
             <option value="" selected>Select Category</option>
             <option value="bishnupur">Bishnupur</option>
             <option value="chandel">Chandel</option>
@@ -147,26 +162,26 @@
 
         <!-- Start Date -->
         <div
-          class="flex flex-col items-start gap-[5px]  cursor-pointer"
+          class="flex flex-col items-start gap-[5px] cursor-pointer"
           onclick="this.querySelector('input').showPicker()"
         >
           <span><span class="mr-1">📅</span>Start Date</span>
           <input
             type="date"
-            class="border-b border-b-black px-2 cursor-pointer"
+            class="border-b border-b-black px-2 cursor-pointer bg-gray-100"
             placeholder="Date from"
           />
         </div>
 
         <!-- End Date -->
         <div
-          class="flex flex-col items-start gap-[5px]  cursor-pointer"
+          class="flex flex-col items-start gap-[5px] cursor-pointer"
           onclick="this.querySelector('input').showPicker()"
         >
           <span><span class="mr-1">📅</span>End Date</span>
           <input
             type="date"
-            class="border-b border-b-black px-2 cursor-pointer"
+            class="border-b border-b-black px-2 cursor-pointer bg-gray-100"
             placeholder="Date from"
           />
         </div>
@@ -177,7 +192,9 @@
           onclick="this.querySelector('select').showPicker()"
         >
           <span><span class="mr-1">🗺️</span>District</span>
-          <select class="border-b border-b-black px-2 cursor-pointer">
+          <select
+            class="border-b border-b-black px-2 bg-gray-100 cursor-pointer"
+          >
             <option value="" selected>Select district</option>
             <option value="bishnupur">Bishnupur</option>
             <option value="chandel">Chandel</option>
@@ -198,168 +215,202 @@
           </select>
         </div>
 
-        <div
-          class="flex flex-col items-start gap-[5px] cursor-pointer">
-          
-            <a class="bg-black text-white py-3 px-6 font-light text-lg rounded-lg" target="_blank" href="/Users/muhammadboycha/Hotel/checkAvailability.html">
-                <button > Check Availability</button>
-            </a>
+        <div class="flex flex-col items-start gap-[5px] cursor-pointer">
+          <a
+            class="bg-yellow-700 hover:bg-yellow-600 text-white py-3 px-6 text-xl rounded-lg"
+            target="_blank"
+            href="/Users/muhammadboycha/Hotel/checkAvailability.html"
+          >
+            <button class="font-bold">Check Availability</button>
+          </a>
         </div>
       </div>
       <div class="flex flex-col items-center">
-        <p class="pt-[125px] font-[14px] tracking-wider text-gray-700 font-serif">
-          WELCOME TO MANIPUR
-        </p>
-        <h1
-          class="my-5 font-serif text-[38px] leading-none text-black font-bold"
-        >
-          Jewel of the East<br />& Land of Culture
-        </h1>
-        <p class="w-1/2 text-gray-700 font-[16px] font-serif">
-          Nestled in the northeastern corner of India, Manipur is a captivating
-          blend of natural beauty, vibrant traditions, and rich cultural
-          heritage. Known for its lush green valleys, tranquil lakes, and the
-          enchanting Loktak Lake with its floating phumdis, Manipur offers an
-          experience like no other. The state is steeped in history and art,
-          from the graceful Manipuri dance to the age-old handloom crafts.
-          Whether it's the colorful festivals, serene landscapes, or
-          warm-hearted people, Manipur promises an unforgettable journey into
-          the heart of India's cultural mosaic.
-        </p>
-        <button class="mt-10 bg-yellow-300 rounded-lg px-4 py-2">SEE MORE</button>
-        <div class="text-center my-5">
-            <p
-              class="font-[12px] text-gray-500 font-serif font-bold tracking-wide mb-2"
+        <p class="text-white mt-[125px] text-[16px] border-[2px] bg-yellow-700  py-2 px-4 rounded-lg mb-5"> Population Destinations </p>
+        <p class="text-4xl font-bold">Places You'll Love To visit</p>
+
+        <div class="flex my-5 gap-10 justify-center">
+          <div class="relative group overflow-hidden w-[500px] rounded-xl shadow-lg">
+            <img
+              src="/Users/muhammadboycha/Hotel/images/kangla.jpeg"
+              alt=""
+              class="h-80 w-full object-cover transform transition-transform duration-500 group-hover:scale-110 "
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white"
             >
-              Discover Hidden Treasures
-            </p>
-            <h6 class="font-serif text-[30px] leading-none text-black font-bold">
-              Featured Specials
-            </h6>
+              <span
+                class="bg-yellow-400 tracking-wider text-black text-xs font-semibold px-3 py-1 rounded-full w-max mb-2"
+                >IMPHAL</span
+              >
+              <h3 class="text-xl font-semibold">Kangla Fort</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden w-[500px] rounded-xl shadow-lg">
+            <img
+              src="/Users/muhammadboycha/Hotel/images/keibulamjao2.jpg"
+              alt=""
+              class="h-80 w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white"
+            >
+              <span
+                class="bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full w-max mb-2"
+                >BHISHEMPUR</span
+              >
+              <h3 class="text-xl font-semibold">Keibul Lamjao National Park</h3>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden w-[500px] rounded-xl shadow-lg">
+            <img
+              src="/Users/muhammadboycha/Hotel/images/shiroilily.webp"
+              alt=""
+              class="h-80 w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white"
+            >
+              <span
+                class="bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full w-max mb-2"
+                >UKHRUL</span
+              >
+              <h3 class="text-xl font-semibold">The Shirui Lily</h3>
+            </div>
+          </div>
         </div>
-        <div class="flex gap-5 justify-center">
-            <div
-              class="relative w-[300px] h-[400px] bg-cover bg-center rounded-lg overflow-hidden bg-[url('https://indiano.travel/wp-content/uploads/2022/06/Manipur-1.png')] transition-transform duration-300 ease-in-out hover:scale-105"
-            >
+        <div class="flex mt-5 gap-10 justify-center">
+            <div class="relative group overflow-hidden w-[500px] rounded-xl shadow-lg">
+              <img
+                src="/Users/muhammadboycha/Hotel/images/temple.jpeg"
+                alt=""
+                class="h-80 w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+              />
               <div
-                class="absolute inset-0 bg-black bg-opacity-10 flex items-end text-white p-4"
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white"
               >
-                <div class="">
-                  <span
-                    class="inline-block px-2 rounded-lg text-sm bg-yellow-400 font-semibold mb-2"
-                    >UP TO 30% OFF</span
-                  >
-                  <h3 class="text-xl font-semibold font-serif">
-                    Kick Off Summer in NYC
-                  </h3>
-                </div>
+                <span
+                  class="bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full w-max mb-2"
+                  >IMPHAL</span
+                >
+                <h3 class="text-xl font-semibold">Shree Bijoy Govindajee Temple</h3>
               </div>
             </div>
-            <div
-              class="relative w-[300px] h-[400px] bg-cover bg-center rounded-lg overflow-hidden bg-[url('https://indiano.travel/wp-content/uploads/2022/06/Manipur-1.png')] transition-transform duration-300 ease-in-out hover:scale-105"
-            >
+            <div class="relative group overflow-hidden w-[500px] rounded-xl shadow-lg">
+              <img
+                src="/Users/muhammadboycha/Hotel/images/emakeithel.jpeg"
+                alt=""
+                class="h-80 w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+              />
               <div
-                class="absolute inset-0 bg-black bg-opacity-10 flex items-end text-white p-4"
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white"
               >
-                <div class="">
-                  <span
-                    class="inline-block px-2 rounded-lg text-sm bg-yellow-400 font-semibold mb-2"
-                    >UP TO 30% OFF</span
-                  >
-                  <h3 class="text-xl font-semibold font-serif">
-                    Kick Off Summer in NYC
-                  </h3>
-                </div>
+                <span
+                  class="bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full w-max mb-2"
+                  >IMPHAL</span
+                >
+                <h3 class="text-xl font-semibold">Ema Keithel</h3>
               </div>
             </div>
-            <div
-              class="relative w-[300px] h-[400px] bg-cover bg-center rounded-lg overflow-hidden bg-[url('https://indiagardening.b-cdn.net/wp-content/uploads/2023/07/Shirui-Lily-propogation.jpg')] transition-transform duration-300 ease-in-out hover:scale-105"
-            >
+            <div class="relative group overflow-hidden w-[500px] rounded-xl shadow-lg">
+              <img
+                src="/Users/muhammadboycha/Hotel/images/khongjom war.jpeg"
+                alt=""
+                class="h-80 w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+              />
               <div
-                class="absolute inset-0 bg-black bg-opacity-10 flex items-end text-white p-4"
+                class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white"
               >
-                <div class="">
-                  <span
-                    class="inline-block px-2 rounded-lg text-sm bg-yellow-400 font-semibold mb-2"
-                    >MEMBERSHIP</span
-                  >
-                  <h3 class="text-xl font-semibold font-serif">
-                    K3 Nights Honeymoon Special Package
-                  </h3>
-                </div>
+                <span
+                  class="bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full w-max mb-2"
+                  >THOUBAL</span
+                >
+                <h3 class="text-xl font-semibold">Khomgjom War Memorial </h3>
               </div>
             </div>
-            <div
-              class="relative w-[300px] h-[400px] bg-cover bg-center rounded-lg overflow-hidden bg-[url('https://wpassets.adda247.com/wp-content/uploads/multisite/sites/5/2022/04/25195206/khongjom-war-memorial.jpg')] transition-transform duration-300 ease-in-out hover:scale-105"
-            >
-              <div
-                class="absolute inset-0 bg-black bg-opacity-10 flex items-end text-white p-4"
-              >
-                <div class="">
-                  <span
-                    class="inline-block px-2 rounded-lg text-sm bg-yellow-400 font-semibold mb-2"
-                    >ONLY THIS WEEK</span
-                  >
-                  <h3 class="text-xl font-semibold font-serif">
-                    Free Breakfast for 3 days Package
-                  </h3>
-                </div>
-              </div>
-            </div>
-         </div>
-        </div> 
+          </div>
+      </div>
     </div>
     <div class="h-[80vh] bg-gray-100">
-        <div class="text-center pt-16 mb-16">
-            <h2 class="font-serif text-[30px] leading-none text-black font-bold">EXPLORE MORE ABOUT MANIPUR</h2>
-            <p class="font-[12px] text-gray-500 font-serif font-bold tracking-wide mt-5">Culture And Tradition</p>
-        </div>
-        <div class="flex px-10 ">
-            <div class=" w-1/2 ">
-                <iframe
-                class="w-full h-[500px] rounded-lg"
-                src="https://www.youtube.com/embed/Xt4vDEgCeNU"
-                title="YouTube video"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-              ></iframe>
-              
-            </div>
-            <div class="w-1/2 ml-12 ">
-                <h2 class="text-bold font-serif text-[38px]">What is Lorem Ipsum?</h2>
-                <p class="mt-5 leading-8 text-gray-500 font-[16px] font-serif">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
-        </div>
-    </div>
-   <footer class="h-[30vh] flex items-center justify-center text-white bg-[url('https://indiagardening.b-cdn.net/wp-content/uploads/2023/07/Shirui-Lily-propogation.jpg')]">
-    <div class="flex justify-center w-1/3 items-center">
-        <img class="" src="https://manipurtourism.gov.in/wp-content/logos/logo%202.jpg"/>
-    </div>
-    <div class="w-1/3">
-        <div class="flex items-center justify-center">
-            <div class="flex items-center gap-[12px] mb-5 ">
-                <a href="https://www.facebook.com/visitmanipur" target="_blank"><i class="fa-brands fa-square-facebook text-2xl"></i></a>
-                <a href="https://www.instagram.com/manipurtourism/#" target="_blank"><i class="fa-brands fa-square-instagram text-2xl"></i></a>
-                <a href="https://www.youtube.com/channel/UCbdceQ_wn16s_YdbYvzCRtw/videos" target="_blank"><i class="fa-brands fa-youtube text-2xl"></i></a>
-                <a href="https://x.com/tourismmanipur" target="_blank"><i class="fa-brands fa-twitter text-2xl"></i></i></a>
-            </div>
-        </div>
-        <div class="text-center mt-5">
-            <p>Copyright © 2012. All Rights Reserved to Tourism Department, Government of Manipur</p>
-            <P>Powered by CODEXP</p>
-        </div>
-    </div>
-    <div class="w-1/3 flex justify-center flex-col items-center">
-       <div>
-        <p class="mb-3">
-            <a href="/Users/muhammadboycha/Hotel/checkAvailability.html" target="_blank">Refund Policy</a>
+      <div class="text-center pt-16 mb-16">
+        <h2 class="font-serif text-[30px] leading-none text-black font-bold">
+          EXPLORE MORE ABOUT MANIPUR
+        </h2>
+        <p
+          class="font-[12px] text-gray-500 font-serif font-bold tracking-wide mt-5"
+        >
+          Culture And Tradition
         </p>
-        <p>
-            <a href="" target="_blank">Terms And Condition</a>
-        </p>
-       </div>
+      </div>
+      <div class="flex px-10 ">
+        <div class="w-1/2 ml-12 mr-5">
+          <h2 class="text-bold font-serif text-[38px]">What do We Know About Manipur?</h2>
+          <p class="mt-5 leading-8 text-gray-500 font-[16px] font-serif">
+            Manipur is a state in northeastern India with Imphal as its capital. It borders the Indian states of Assam to the west, Mizoram to the south, and Nagaland to the north and shares the international border with Myanmar, specifically the Sagaing Region to the east and Chin State to the southeast.
+            Manipur is famous for its rich culture and heritage, particularly its vibrant Manipuri classical dance, which is distinct from other Indian dance forms. The state is also known for its exquisite handloom and handicrafts, beautiful natural scenery, and delicious local cuisine. Additionally, Manipur is the birthplace of modern polo and the renowned Raas Lila dance.
+          </p>
+        </div>
+        <div class="w-1/2">
+            <iframe
+  class="w-full h-[500px] rounded-lg"
+  src="https://www.youtube.com/embed/hWGG1qD2x0Q"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+
+          
+        </div>
+      </div>
     </div>
-   </footer>
- </body>
+    <footer class="h-[30vh] flex relative  items-center bg-[url('/Users/muhammadboycha/Hotel/images/shirui-kashung-p.jpg')] bg-cover text-white ">
+      <div class="bg-black absolute inset-0 bg-opacity-70 "></div>
+      <div class="flex w-full z-10">
+        <div class="flex justify-center w-1/4 items-start">
+            <img
+              class=""
+              src="https://manipurtourism.gov.in/wp-content/logos/logo%202.jpg"
+            />
+          </div>
+          <div class="w-1/4">
+            <h2 class="mb-5 font-bold text-xl">Other Pages</h2>
+            <p>
+              <a
+                href="/Users/muhammadboycha/Hotel/refundpolicy.html"
+                target="_blank"
+                >Refund Policy</a
+              >
+            </p>
+            <p class="my-3">
+              <a href="/Users/muhammadboycha/Hotel/termsandcondition.html" target="_blank">Terms And Condition</a>
+            </p>
+          </div>
+          <div class="w-1/4 flex flex-col justify-center items-start">
+            <h2 class="mb-5 font-bold text-xl">Contact info</h2>
+            <div class="">
+              <i class="fa-solid fa-location-dot mr-2"></i>
+              <p class="inline-block">Imphal Manipur 795001</p>
+            </div>
+            <div class="mt-2">
+              <i class="fa-solid fa-phone mr-2"></i>
+              <p class="inline-block">+91-9876543218</p>
+            </div>
+            <div class="mt-2">
+              <i class="fa-solid fa-envelope mr-2"></i>
+              <p class="inline-block">manipurtourism@gmail.com</p>
+            </div>
+          </div>
+          <div class="w-1/4 flex items-start flex-col">
+            <h2 class="mb-5 font-bold text-xl">Book your home stay</h2>
+            <a
+              class="bg-yellow-600 hover:bg-white hover:text-black text-white py-2 px-4 font-light text-lg rounded-lg"
+              href="/Users/muhammadboycha/Desktop/manipur.html"
+            >
+              <button class="font-bold">Check Availability</button>
+            </a>
+          </div>
+      </div>
+    </footer>
+  </body>
 </html>
